@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Cursos</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-card *ngFor="let item of lista">
+    <img [src]="item.img_name" width="150"/>
+    <ion-card-content>
+      <ion-card-title>
+       <h2> {{ item.titulo }} </h2>
+        </ion-card-title><ion-badge color="primary" item-end>Básico</ion-badge>
+      <p>
+        {{item.descricao}}
+      </p>
+
+           
+     <button ion-button outline color="primary" (click)="AbrirDetalhe(item);">Mais</button>
+     <button ion-button outline color="secondary">  R$ {{item.valor_text }} <ion-icon name="cart"> </ion-icon></button>
+     </ion-card-content>
+
+  </ion-card>
+</ion-content>
+
